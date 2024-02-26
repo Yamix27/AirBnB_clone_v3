@@ -104,8 +104,8 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
-- Abdelhamid Maaira - [GitHub](#) / [Twitter](#)
-- Mohamed Amyne Boutallaght - [GitHub](#) / [Twitter](#)
+- Abdelhamid Maaira - [GitHub](https://github.com/Hmddev23) / [Twitter](https://twitter.com/AbdelhamidMa23)
+- Mohamed Amyne Boutallaght - [GitHub](https://github.com/Yamix27) / [Twitter](#)
 
 ## License
 Public Domain. No copyright protection.
