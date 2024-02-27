@@ -108,7 +108,7 @@ No known bugs at this time.
 - Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang) Second part of Airbnb: Joann Vuong
 
 - Abdelhamid Maaira - [GitHub](https://github.com/Hmddev23) / [Twitter](https://twitter.com/AbdelhamidMa23)
-- Mohamed Amyne Boutallaght - [GitHub](https://github.com/Yamix27) / [Twitter](https://twitter.com/)
+- Mohamed Amyne Boutallaght - [GitHub](https://github.com/Yamix27) / [Twitter](https://twitter.com/LightRyuma)
 
 ## License
 Public Domain. No copyright protection.
