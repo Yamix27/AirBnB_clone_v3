@@ -2,47 +2,44 @@
 """
 Endpoint (route) will be to return the status of my API
 """
-import os
-from flask import Flask
+
+from os import getenv
+from flask import Flask, jsonify
 from flask_cors import CORS
+
 from api.v1.views import app_views
 from models import storage
 
 
-# creating a Flask app
 app = Flask(__name__)
+
 CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
 
-
-app.register_blueprint(app_views, url_prefix="/api/v1")
-
-
-@app.errorhandler(404)
-def page_not_found(e):
-    return {"error": "Not found"}, 404
-
-
-@app.errorhandler(400)
-def page_not_found(e):
-    message = e.description
-    return message, 400
+app.register_blueprint(app_views)
 
 
 @app.teardown_appcontext
-def close(ctx):
+def teardown(exception):
+    """
+    teardown function
+    """
     storage.close()
 
 
-if os.getenv("HBNB_API_HOST"):
-    host = os.getenv("HBNB_API_HOST")
-else:
-    host = "0.0.0.0"
+@app.errorhandler(404)
+def handle_404(exception):
+    """
+    handles 404 error
+    :return: returns 404 json
+    """
+    data = {
+        "error": "Not found"
+    }
 
-if os.getenv("HBNB_API_PORT"):
-    port = int(os.getenv("HBNB_API_PORT"))
-else:
-    port = 5000
+    resp = jsonify(data)
+    resp.status_code = 404
 
+    return(resp)
 
 if __name__ == "__main__":
-    app.run(host=host, port=port, threaded=True)
+    app.run(getenv("HBNB_API_HOST"), getenv("HBNB_API_PORT"))
